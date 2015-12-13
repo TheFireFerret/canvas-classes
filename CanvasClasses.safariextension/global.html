@@ -6,41 +6,22 @@ Global HTML Page to control the extension logic.
 <script type="text/javascript" src="scripts.js"></script>
 
 <script>
-// Set up the Listener
-safari.application.addEventListener("command", performCommand, false);
 safari.application.addEventListener("message", scanPage, false);
-
-// Function to perform when event is received
-function performCommand(event) {
-	// Make sure event comes from the button
-    if (event.command == "open-canvas") {
-		var newTab = safari.application.activeBrowserWindow.openTab(); // Open a new tab
-		newTab.url = "https://utexas.instructure.com";
-    }
-
-    if (event.command == "data") {
-        var newTab = safari.application.activeBrowserWindow.openTab(); // Open a new tab
-        newTab.url = "https://utexas.instructure.com";
-    }
-}
 
 function scanPage(event) {
     if (event.name == "sendstart") {
-//        alert('message received');
         safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('startScan', 0);
     }
 
     if (event.name == "done") {
-//        alert('done received');
-//        safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('startScan', 0);
-//        alert(event.message);
         var names = event.message;
         for (var i = 0; i < names.length; i++) {
             localStorage.setItem(names[i], i);
         }
-        location.reload();
-    }
 
+    }
+//    location.reload();
+//    displaylinks();
 }
 
 </script>

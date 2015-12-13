@@ -1,15 +1,11 @@
 function displaylinks() {
     for (var i = 0; i < localStorage.length; i++) {
+        document.getElementById('links').innerHTML +=("<p>");
         document.getElementById('links').innerHTML += localStorage.key(i).link(localStorage.getItem(localStorage.key(i)));
-
-        //document.getElementById('links').innerHTML +=("<div>");
-        document.getElementById('links').innerHTML += "<button id='delete' onclick='deleteClass(localStorage.key(" + i + "))'>X</button>" + "<br>";
-        //document.getElementById('links').innerHTML +=("</div>");
-
+        document.getElementById('links').innerHTML += "<button id='delete' style='float: right;' onclick='deleteClass(localStorage.key(" + i + "))'>X</button>" ;
+        document.getElementById('links').innerHTML +=("</p>");
     }
 }
-
-
 
 function dispatchScanMessage(name, message) {
     if (safari.self.tab) {
