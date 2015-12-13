@@ -15,3 +15,19 @@ function displaylinks() {
          document.getElementById('links').innerHTML += (links[i].link(URLs[i]) + "<br>");
      }
 }
+
+
+
+function loadClasses(){
+    //var classList = document.getElementsByClassName("customListItem");
+    //var lis = document.getElementById("menu-item-drop-column-list").getElementsByTagName("customListItem");
+
+        //document.write(lis[0].href);
+    safari.write("cry");
+
+
+}
+
+function addClasses(name, link){
+
+}
