@@ -1,20 +1,4 @@
 function displaylinks() {
-    var links = [];
-    links[0]="OS";
-    links[1]="Data Management";
-    links[2]="Stat";
-    links[3]="LAS";
-
-    var URLs = [];
-    URLs[0]="https://utexas.instructure.com/courses/1144197";
-    URLs[1]="https://utexas.instructure.com/courses/1144118";
-    URLs[2]="https://utexas.instructure.com/courses/1154537";
-    URLs[3]="https://utexas.instructure.com/courses/1147037";
-
-     for (var i = 0; i < links.length; i++) {
-         document.getElementById('links').innerHTML += (links[i].link(URLs[i]) + "<br>");
-     }
-
     for (var i = 0; i < localStorage.length; i++) {
         document.getElementById('links').innerHTML += localStorage.key(i).link(localStorage.getItem(localStorage.key(i)));
 
@@ -58,18 +42,3 @@ function deleteClass(name) {
 
     location.reload();
 }
-
-//function test() {
-//    console.log("hello");
-//    var gw = safari.extension.globalPage.contentWindow;
-//    gw.postMessage("message", window.location.origin);
-//}
-
-
-//function init() {
-//    if (window.localStorage && !localStorage.getItem("classes")) {
-//        var classes = [];
-//        var string = JSON.stringify(classes);
-//        localStorage.setItem('classes', string);
-//    }
-//}
