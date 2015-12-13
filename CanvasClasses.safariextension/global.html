@@ -2,10 +2,11 @@
 Global HTML Page to control the extension logic.
 -->
 <!DOCTYPE HTML>
-<!--
+<!--<script type="text/javascript" src="scripts.js"></script>-->
 <script>
 // Set up the Listener
 safari.application.addEventListener("command", performCommand, false);
+safari.application.addEventListener("message", scanPage, false);
 
 // Function to perform when event is received
 function performCommand(event) {
@@ -14,5 +15,19 @@ function performCommand(event) {
 		var newTab = safari.application.activeBrowserWindow.openTab(); // Open a new tab
 		newTab.url = "https://utexas.instructure.com"; // Set tab URL to nettuts
     }
+
+    if (event.command == "data") {
+        var newTab = safari.application.activeBrowserWindow.openTab(); // Open a new tab
+        newTab.url = "https://utexas.instructure.com"; // Set tab URL to nettuts
+
+//        var classes = document.getElementsByClassName('menu-item-drop-column-list');
+//        console.log(classes);
+
+    }
 }
-</script> -->
+
+    function scanPage(event) {
+        var classes =
+    }
+
+</script>

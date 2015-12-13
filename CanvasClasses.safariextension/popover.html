@@ -1,23 +1,32 @@
 <!DOCTYPE html>
+<script type="text/javascript" src="scripts.js"></script>
+
 <html>
     <head>
         <title>
             Classes
         </title>
-        <script src="scripts.js"></script>
         <script>
             window.onload = displaylinks;
+
         </script>
     </head>
 <body>
     <h1>Classes</h1>
 
     <div title="links" id="links"></div>
-    <form id="class">
+
+    <button id="show" onclick="dispatchScanMessage()">scan</button>
+
+    <button id="show" onclick="showAddMore()">+</button>
+
+    <form id="classInput" style="visibility: hidden" >
         Class: <input type="text" id="class_input">
         Link: <input type="text" id="link_input">
+
     </form>
-    <button id="add" onclick="addClasses()"> Add New</button>
+    <button id="add" onclick="addClasses()" style="visibility: hidden"> Add </button>
+
 
 
 </body>
