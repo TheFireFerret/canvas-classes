@@ -11,15 +11,19 @@ safari.application.addEventListener("message", scanPage, false);
 function scanPage(event) {
     if (event.name == "sendstart") {
         safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('startScan', 0);
+        return;
     }
 
     if (event.name == "done") {
-        var names = event.message;
-        for (var i = 0; i < names.length; i++) {
-            localStorage.setItem(names[i], i);
-        }
+        var both = event.message.split('_');
+        var names = both[0].split(',');
+        var links = both[1].split('-');
 
+        for (var i = 0; i < names.length; i++) {
+            localStorage.setItem(names[i], links[i]);
+        }
     }
+
 //    location.reload();
 //    displaylinks();
 }

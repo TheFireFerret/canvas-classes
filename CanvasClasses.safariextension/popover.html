@@ -9,14 +9,15 @@
         <script>
             window.onload = displaylinks;
 
+
         </script>
     </head>
 <body>
-    <h1>Classes</h1>
+    <h3>Classes</h3>
 
     <div title="links" id="links" style="clear: both; position: relative;" ></div>
 
-    <button id="scan" onclick="dispatchScanMessage('sendstart')">scan</button>
+    <button id="scan" onclick="dispatchScanMessage('sendstart'); location.reload();">scan</button>
 
     <button id="show" onclick="showAddMore()">+</button>
 
