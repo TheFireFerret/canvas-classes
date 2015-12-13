@@ -2,10 +2,10 @@
 Global HTML Page to control the extension logic.
 -->
 <!DOCTYPE HTML>
-
+<!--
 <script>
 // Set up the Listener
-safari.application.addEventListener("command", NULL, false);
+safari.application.addEventListener("command", performCommand, false);
 
 // Function to perform when event is received
 function performCommand(event) {
@@ -15,4 +15,4 @@ function performCommand(event) {
 		newTab.url = "https://utexas.instructure.com"; // Set tab URL to nettuts
     }
 }
-</script>
+</script> -->
